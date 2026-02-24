@@ -4,7 +4,7 @@ export default class Chef {
   constructor(element) {
     this.element = element;
     this.menu = [];
-    this.container = document.createElement('div');
+    this.container = element.querySelector('.chef__order');
 
     this.init();
   }
@@ -26,10 +26,10 @@ export default class Chef {
 
   sendOrder() {
     console.log('func-sendOrder');
-    document.querySelector('.chef-footer').appendChild(this.container);
+
     this.container.innerText = '';
 
-    const active = this.element.querySelectorAll('.is-active');
+    const active = this.element.querySelectorAll('.is-selected');
     console.log(active.length);
 
     let p = document.createElement('p');
